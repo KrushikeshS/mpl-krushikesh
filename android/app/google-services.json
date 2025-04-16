@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "254953847733",
+    "project_id": "mplkrushikesh-283a2",
+    "storage_bucket": "mplkrushikesh-283a2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:254953847733:android:a229333a65f52e5b96f7fc",
+        "android_client_info": {
+          "package_name": "com.example.mplkrushikesh"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDin2ZWld1GNOTjWWVgi1Q69kv7MUIg2HA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -11,8 +11,22 @@ import 'dart:ui';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'dart:typed_data';
 import 'dart:ui' as ui;
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: const FirebaseOptions(
+      apiKey: "AIzaSyD9S7CtVpgsjmhQifS4BPmZsA_lugrX-BA",
+  authDomain: "mplkrushikesh-283a2.firebaseapp.com",
+  projectId: "mplkrushikesh-283a2",
+  storageBucket: "mplkrushikesh-283a2.firebasestorage.app",
+  messagingSenderId: "254953847733",
+  appId: "1:254953847733:web:9fc02cbe881102f296f7fc"
+    )
+  );
+  // runApp(MyApp());
   runApp(
     ChangeNotifierProvider(
       create: (context) => AppSettings(),

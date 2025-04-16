@@ -9,7 +9,7 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final settings = Provider.of<AppSettings>(context);
-    
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Settings'),
@@ -24,23 +24,23 @@ class SettingsScreen extends StatelessWidget {
             value: settings.darkMode,
             onChanged: (value) => settings.setDarkMode(value),
           ),
-          
+
           // Drawing Settings
           _buildSectionHeader(context, 'Drawing Defaults'),
-          ListTile(
-            title: const Text('Default Color'),
-            subtitle: const Text('Choose default brush color'),
-            trailing: Container(
-              width: 24,
-              height: 24,
-              decoration: BoxDecoration(
-                color: settings.defaultColor,
-                shape: BoxShape.circle,
-                border: Border.all(color: Colors.grey),
-              ),
-            ),
-            onTap: () => _showColorPicker(context, settings),
-          ),
+          // ListTile(
+          //   title: const Text('Default Color'),
+          //   subtitle: const Text('Choose default brush color'),
+          //   trailing: Container(
+          //     width: 24,
+          //     height: 24,
+          //     decoration: BoxDecoration(
+          //       color: settings.defaultColor,
+          //       shape: BoxShape.circle,
+          //       border: Border.all(color: Colors.grey),
+          //     ),
+          //   ),
+          //   onTap: () => _showColorPicker(context, settings),
+          // ),
           ListTile(
             title: const Text('Default Brush Size'),
             subtitle: Text('${settings.defaultStrokeWidth.toInt()} px'),
@@ -61,13 +61,13 @@ class SettingsScreen extends StatelessWidget {
             value: settings.showGrid,
             onChanged: (value) => settings.setShowGrid(value),
           ),
-          SwitchListTile(
-            title: const Text('Auto-save'),
-            subtitle: const Text('Automatically save drawings'),
-            value: settings.autosave,
-            onChanged: (value) => settings.setAutosave(value),
-          ),
-          
+          // SwitchListTile(
+          //   title: const Text('Auto-save'),
+          //   subtitle: const Text('Automatically save drawings'),
+          //   value: settings.autosave,
+          //   onChanged: (value) => settings.setAutosave(value),
+          // ),
+
           // About Section
           _buildSectionHeader(context, 'About'),
           const ListTile(
@@ -78,7 +78,7 @@ class SettingsScreen extends StatelessWidget {
       ),
     );
   }
-  
+
   Widget _buildSectionHeader(BuildContext context, String title) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
@@ -91,7 +91,7 @@ class SettingsScreen extends StatelessWidget {
       ),
     );
   }
-  
+
   void _showColorPicker(BuildContext context, AppSettings settings) {
     showDialog(
       context: context,
@@ -117,4 +117,3 @@ class SettingsScreen extends StatelessWidget {
     );
   }
 }
-
