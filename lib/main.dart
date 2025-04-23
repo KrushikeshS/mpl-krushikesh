@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter_drawing_app/screens/login_screen.dart';
+import 'package:flutter_drawing_app/screens/signup_screen.dart';
 import 'screens/drawing_screen.dart';
 import 'screens/gallery_screen.dart';
 import 'screens/settings_screen.dart';
@@ -17,15 +19,13 @@ import 'firebase_options.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-    options: const FirebaseOptions(
-      apiKey: "AIzaSyD9S7CtVpgsjmhQifS4BPmZsA_lugrX-BA",
-  authDomain: "mplkrushikesh-283a2.firebaseapp.com",
-  projectId: "mplkrushikesh-283a2",
-  storageBucket: "mplkrushikesh-283a2.firebasestorage.app",
-  messagingSenderId: "254953847733",
-  appId: "1:254953847733:web:9fc02cbe881102f296f7fc"
-    )
-  );
+      options: const FirebaseOptions(
+          apiKey: "AIzaSyD9S7CtVpgsjmhQifS4BPmZsA_lugrX-BA",
+          authDomain: "mplkrushikesh-283a2.firebaseapp.com",
+          projectId: "mplkrushikesh-283a2",
+          storageBucket: "mplkrushikesh-283a2.firebasestorage.app",
+          messagingSenderId: "254953847733",
+          appId: "1:254953847733:web:9fc02cbe881102f296f7fc"));
   // runApp(MyApp());
   runApp(
     ChangeNotifierProvider(
@@ -56,7 +56,13 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       themeMode: settings.darkMode ? ThemeMode.dark : ThemeMode.light,
-      home: const HomeScreen(),
+      initialRoute: '/login',
+      routes: {
+        '/login': (context) => const LoginScreen(),
+        '/signup': (context) => const SignupScreen(),
+        '/home': (context) => const HomeScreen(),
+      },
+      // home: const HomeScreen(),
     );
   }
 }
