@@ -1,5 +1,5 @@
-name: flutter_drawing_app
-description: A drawing app similar to MS Paint for mobile devices.
+name: mplkrushikesh
+description: A feature-rich drawing application with tools for creative expression.
 publish_to: "none"
 version: 1.0.0+1
 
@@ -21,7 +21,6 @@ dependencies:
     sdk: flutter
   firebase_core: ^3.13.0
   firebase_auth: ^5.5.2
-  
 
 dev_dependencies:
   flutter_test:
